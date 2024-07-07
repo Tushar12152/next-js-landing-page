@@ -77,7 +77,7 @@ const Nav = () => {
                     </span>
 
                     <span className="px-4 btn hover:bg-slate-700 bg-gray-400">
-                      <span>$00</span>    <BiShoppingBag/>
+                      <span> $00</span>    <BiShoppingBag/>
                     </span>
 
                 </div>
