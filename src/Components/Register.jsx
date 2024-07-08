@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function LoginForm() {
+export default function  Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -17,7 +17,7 @@ export default function LoginForm() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#60E9CE] via-[#648680] to-gray-400">
       <div className="bg-white p-10 rounded-lg shadow-2xl w-full max-w-md transform transition-all duration-500 ease-in-out hover:scale-105">
-        <h2 className="text-3xl font-extrabold mb-6 text-center text-gray-800">Login</h2>
+        <h2 className="text-3xl font-extrabold mb-6 text-center text-gray-800">Sign Up</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -58,12 +58,12 @@ export default function LoginForm() {
               type="submit"
               className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-sm font-medium text-white bg-[#5899a5] hover:bg-[#83ada5] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-300"
             >
-              Sign in
+              Sign Up
             </button>
             
           </div>
 
-           <p className='text-black'> New here? Please <Link href='/signup' className='text-[#5899a5] '>Sign Up</Link> </p>
+           <p className='text-black'> Already have an account? Please <Link href='/login' className='text-[#5899a5] '>Login </Link> </p>
         </form>
         
       </div>
