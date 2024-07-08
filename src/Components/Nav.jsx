@@ -57,7 +57,8 @@ const Nav = () => {
            <div className="flex gap-6">
                <Image className="text-md w-36 pr-5 border-r-2" src={logo} alt="logo" height={500} width={500} />
                 <div className="flex gap-6 items-center">
-                   <span className="text-5xl font-bold"><BsHeadset/> </span>
+                <span className="text-5xl font-bold"><BsHeadset/> </span>
+                   
                     <div>
                          <h1 className="font-bold text-lg text-gray-700 border-b-2">Email us: support@storesupport.com</h1>
                          <h1 className="font-bold text-lg text-gray-700">Call us: +0123 456 789</h1>
@@ -73,7 +74,8 @@ const Nav = () => {
                 </div>
                 <div className="flex justify-center items-center gap-6">
                     <span className="px-4 btn hover:bg-slate-700 bg-gray-400">
-                         <BiUser/>
+                    <Link href='/login'> <BiUser/></Link>
+                        
                     </span>
 
                     <span className="px-4 btn hover:bg-slate-700 bg-gray-400">
