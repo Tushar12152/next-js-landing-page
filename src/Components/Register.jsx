@@ -1,6 +1,9 @@
 'use client'
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import Link from 'next/link';
 import { useState } from 'react';
+import auth from '../../firebase.config';
+import toast from 'react-hot-toast';
 
 export default function  Register() {
   const [email, setEmail] = useState('');
@@ -11,17 +14,13 @@ export default function  Register() {
     const email= e.target.email.value;
     const password= e.target.password.value;
 
-    console.log(email,password)
-
-    try {
+    // console.log(email,password)
       // await createUserWithEmailAndPassword(auth, email, password);
       // router.push('/'); // Redirect to homepage after successful sign-up
-      await create
-    } catch (error) {
-      console.log(error)
-    }
-
-
+     const result= await createUserWithEmailAndPassword(auth, email, password)
+         if(result?.user?.email){
+              toast.success('registration completed')
+         }
   };
 
   return (
