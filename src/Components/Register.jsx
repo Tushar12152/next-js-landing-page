@@ -6,12 +6,22 @@ export default function  Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     const email= e.target.email.value;
     const password= e.target.password.value;
 
     console.log(email,password)
+
+    try {
+      // await createUserWithEmailAndPassword(auth, email, password);
+      // router.push('/'); // Redirect to homepage after successful sign-up
+      await create
+    } catch (error) {
+      console.log(error)
+    }
+
+
   };
 
   return (
