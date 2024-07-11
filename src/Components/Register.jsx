@@ -5,22 +5,24 @@ import { useState } from 'react';
 import auth from '../../firebase.config';
 import toast from 'react-hot-toast';
 
-export default function  Register() {
+ 
+export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const email= e.target.email.value;
-    const password= e.target.password.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
     // console.log(email,password)
-      // await createUserWithEmailAndPassword(auth, email, password);
-      // router.push('/'); // Redirect to homepage after successful sign-up
-     const result= await createUserWithEmailAndPassword(auth, email, password)
-         if(result?.user?.email){
-              toast.success('registration completed')
-         }
+    // await createUserWithEmailAndPassword(auth, email, password);
+    // router.push('/'); // Redirect to homepage after successful sign-up
+    const result = await createUserWithEmailAndPassword(auth, email, password)
+    if (result?.user?.email) {
+      toast.success('registration completed')
+    }
+    
   };
 
   return (
@@ -35,7 +37,7 @@ export default function  Register() {
             <div className="mt-1">
               <input
                 id="email"
-                name="email"
+                name="email" 
                 type="email"
                 autoComplete="email"
                 required
@@ -69,12 +71,12 @@ export default function  Register() {
             >
               Sign Up
             </button>
-            
+
           </div>
 
-           <p className='text-black'> Already have an account? Please <Link href='/login' className='text-[#5899a5] '>Login </Link> </p>
+          <p className='text-black'> Already have an account? Please <Link href='/login' className='text-[#5899a5] '>Login </Link> </p>
         </form>
-        
+
       </div>
     </div>
   );

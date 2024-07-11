@@ -1,17 +1,28 @@
 'use client'
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import Link from 'next/link';
 import { useState } from 'react';
+import auth from '../../firebase.config';
+import toast from 'react-hot-toast';
+
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const email= e.target.email.value;
     const password= e.target.password.value;
+    
+    const result= await signInWithEmailAndPassword(auth, email, password)
+     if(result.user.email){
+        toast.success('Logged in')
+         
+     }
 
-    console.log(email,password)
+    // console.log(email,password)
   };
 
   return (
